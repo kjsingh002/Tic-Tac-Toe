@@ -93,6 +93,7 @@
     <Button
         android:id="@+id/play_again"
         android:layout_marginTop="20dp"
+        android:visibility="invisible"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Play Again"/>

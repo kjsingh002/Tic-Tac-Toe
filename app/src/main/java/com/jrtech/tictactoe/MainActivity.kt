@@ -1,5 +1,6 @@
 package com.jrtech.tictactoe
 
+import android.opengl.Visibility
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -33,6 +34,7 @@ class MainActivity : AppCompatActivity() {
             override fun onClick(v: View?) {
                 displayWinner?.text = ""
                 gameRunning = true
+                playAgain!!.visibility = View.INVISIBLE
                 startingState = intArrayOf(2,2,2,2,2,2,2,2,2)
                 for (x in 0 until gridLayout!!.childCount){
                     val image: ImageView = gridLayout!!.getChildAt(x) as ImageView
@@ -60,6 +62,7 @@ class MainActivity : AppCompatActivity() {
                 if (startingState[winningPosition[0]] == startingState[winningPosition[1]] && startingState[winningPosition[1]] == startingState[winningPosition[2]] && startingState[winningPosition[0]] != 2
                 ) {
                     gameRunning = false
+                    playAgain!!.visibility = View.VISIBLE
                     if (player == 1){
                         displayWinner?.text = "Red has won"
                     }else{
